@@ -48,11 +48,12 @@ const VectorDBPage = (props: Props) => {
                                 </div>
                             </div>
                         </div>
-                        <Button variant={'outline'} className='w-full h-full'>
-                            <span className='flex flex-row'>
-                                <Database size={50} className='stroke-[#D90013]' />
-                                <MoveUp className='stroke-[#D90013]' />
-                            </span>
+                        <Button variant={'outline'} className='w-full h-full min-h-[150px] flex flex-col items-center justify-center gap-2'>
+                            <div className='flex flex-row items-center justify-center relative'>
+                                <Database className='!w-16 !h-16 stroke-[#D90013]' />
+                                <MoveUp className='!w-8 !h-8 stroke-[#D90013] absolute -right-6' strokeWidth={3} />
+                            </div>
+                            {/* <span className='text-[#D90013] font-semibold mt-2'>Upload Data</span> */}
                         </Button>
                     </div>
                     {isUploading && <div className='mt-4'>
