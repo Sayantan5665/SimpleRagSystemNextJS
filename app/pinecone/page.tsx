@@ -13,12 +13,16 @@ type Props = {}
 
 const VectorDBPage = (props: Props) => {
     const [isUploading, setisUploading] = useState(true);
+    const [indexName, setIndexName] = useState('');
+    const [namespace, setNamespace] = useState('');
+
+    const handleFileUpload = () => {}
 
     return (
         <main className='flex flex-col items-center p-24'>
             <Card>
                 <CardHeader>
-                    <CardTitle>Update Knowladge Base</CardTitle>
+                    <CardTitle>Update Knowledge Base</CardTitle>
                     <CardDescription>Add New documents to Vector DB</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -38,13 +42,13 @@ const VectorDBPage = (props: Props) => {
                                     <Label>
                                         Index Name
                                     </Label>
-                                    <Input placeholder='index name' className='disabled:cursor-default' />
+                                    <Input value={indexName} onChange={(e) => setIndexName(e.target.value)} placeholder='index name' className='disabled:cursor-default' />
                                 </div>
                                 <div className="grid gap-2">
                                     <Label>
                                         Namespace
                                     </Label>
-                                    <Input placeholder='namespace' className='disabled:cursor-default' />
+                                    <Input value={namespace} onChange={(e) => setNamespace(e.target.value)} placeholder='namespace' className='disabled:cursor-default' />
                                 </div>
                             </div>
                         </div>
